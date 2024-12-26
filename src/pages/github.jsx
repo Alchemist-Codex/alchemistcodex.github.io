@@ -21,9 +21,25 @@ const GithubPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Check if all required env variables are present
+        const requiredEnvVars = [
+          'VITE_GITHUB_APP_ID',
+          'VITE_GITHUB_PRIVATE_KEY',
+          'VITE_GITHUB_INSTALLATION_ID',
+          'VITE_GITHUB_ORG_NAME'
+        ];
+
+        for (const envVar of requiredEnvVars) {
+          if (!import.meta.env[envVar]) {
+            throw new Error(`Missing required environment variable: ${envVar}`);
+          }
+        }
+
+        const privateKey = import.meta.env.VITE_GITHUB_PRIVATE_KEY;
+        
         const auth = createAppAuth({
           appId: import.meta.env.VITE_GITHUB_APP_ID,
-          privateKey: import.meta.env.VITE_GITHUB_PRIVATE_KEY.replace(/\\n/g, '\n'),
+          privateKey: privateKey.includes('\\n') ? privateKey : privateKey.replace(/\n/g, '\\n'),
           installationId: import.meta.env.VITE_GITHUB_INSTALLATION_ID,
         });
 
