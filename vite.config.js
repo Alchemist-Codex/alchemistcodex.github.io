@@ -22,5 +22,7 @@ export default defineConfig({
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1600,
     cssCodeSplit: false
-  }
+  },
+  publicDir: 'public',
+  assetsInclude: ['**/*.md']
 }) 
