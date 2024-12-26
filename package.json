@@ -7,7 +7,7 @@
     "prebuild": "node scripts/prebuild.js",
     "build": "npm run prebuild && vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -t true"
   },
   "dependencies": {
     "@octokit/auth-app": "^7.1.3",

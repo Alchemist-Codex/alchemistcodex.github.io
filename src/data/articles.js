@@ -1,14 +1,10 @@
-export const getArticles = () => {
-    return [
-      {
-        id: 1,
-        title: "My First Blog Post",
-        description: "A brief introduction to my blog",
-        cover_image: "/blog/article1.png",
-        date: "2024-03-20",
-        content: "Your markdown content here...",
-        tags: ["React", "JavaScript", "Web Development"]
-      },
-      // Add more articles as needed
-    ];
-  }; 
+export const getArticles = async () => {
+  try {
+    const response = await fetch('/articles.json');
+    const articles = await response.json();
+    return articles;
+  } catch (error) {
+    console.error('Error loading articles:', error);
+    return [];
+  }
+}; 
