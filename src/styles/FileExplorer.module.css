@@ -1,0 +1,51 @@
+.explorer {
+  width: 250px;
+  background: var(--explorer-bg);
+  border-right: 1px solid var(--border);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.header {
+  padding: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+.content {
+  padding: 10px;
+}
+
+.folder, .file {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.folder:hover, .file:hover {
+  background: var(--hover-bg);
+}
+
+.children {
+  padding-left: 20px;
+}
+
+.icon {
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+.active {
+  background: var(--active-bg);
+}
+
+.expanded {
+  font-weight: bold;
+} 
