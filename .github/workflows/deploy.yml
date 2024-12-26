@@ -24,12 +24,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Create env file
+        run: |
+          echo "VITE_APP_ID=${{ secrets.VITE_APP_ID }}" >> .env
+          echo "VITE_PRIVATE_KEY=${{ secrets.VITE_PRIVATE_KEY }}" >> .env
+          echo "VITE_INSTALLATION_ID=${{ secrets.VITE_INSTALLATION_ID }}" >> .env
+          echo "VITE_ORG_NAME=${{ secrets.VITE_ORG_NAME }}" >> .env
+
       - name: Build
-        env:
-          VITE_APP_ID: ${{ secrets.VITE_APP_ID }}
-          VITE_PRIVATE_KEY: ${{ secrets.VITE_PRIVATE_KEY }}
-          VITE_INSTALLATION_ID: ${{ secrets.VITE_INSTALLATION_ID }}
-          VITE_ORG_NAME: ${{ secrets.VITE_ORG_NAME }}
         run: npm run build
 
       - name: Deploy
@@ -38,4 +40,4 @@ jobs:
           folder: dist
           token: ${{ secrets.DEPLOY_TOKEN }}
           branch: gh-pages
-          clean: true
+          clean: true 
