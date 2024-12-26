@@ -1,22 +1,17 @@
 [
   {
+    "filename": "upload-yours.md",
     "category": "career",
-    "path": "/blog/career/upload-yours"
+    "path": "/blog/career/upload-yours.md"
   },
   {
+    "filename": "upload-yours.md",
     "category": "personal",
-    "path": "/blog/personal/upload-yours"
+    "path": "/blog/personal/upload-yours.md"
   },
   {
-    "title": "Getting Started with React",
-    "date": "2024-03-20",
+    "filename": "test.md",
     "category": "technical",
-    "path": "/blog/technical/test",
-    "excerpt": "A beginner's guide to React development",
-    "tags": [
-      "react",
-      "javascript",
-      "web-development"
-    ]
+    "path": "/blog/technical/test.md"
   }
 ]
