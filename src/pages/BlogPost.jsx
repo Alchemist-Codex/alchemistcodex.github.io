@@ -1,34 +1,27 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { getPostById } from '../data/blog-posts';
-import ReactMarkdown from 'react-markdown';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import MarkdownRenderer from '../components/MarkdownRenderer';
 import styles from '../styles/BlogPost.module.css';
 
-export default function BlogPost() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const post = getPostById(parseInt(id));
+const BlogPost = () => {
+  const { category, slug } = useParams();
+  const [post, setPost] = useState(null);
 
-  if (!post) {
-    navigate('/404');
-    return null;
-  }
+  useEffect(() => {
+    fetch(`/content/blog/${category}/${slug}.md`)
+      .then(res => res.text())
+      .then(text => {
+        setPost(text);
+      });
+  }, [category, slug]);
+
+  if (!post) return <div>Loading...</div>;
 
   return (
     <div className={styles.container}>
-      <article className={styles.post}>
-        <h1>{post.title}</h1>
-        <div className={styles.metadata}>
-          <span>{new Date(post.date).toLocaleDateString()}</span>
-          <div className={styles.tags}>
-            {post.tags.map(tag => (
-              <span key={tag} className={styles.tag}>{tag}</span>
-            ))}
-          </div>
-        </div>
-        <div className={styles.content}>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
-      </article>
+      <MarkdownRenderer content={post} />
     </div>
   );
-} 
+};
+
+export default BlogPost; 
