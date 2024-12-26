@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "upload-yours.md",
+    "category": "career",
+    "path": "/blog/career/upload-yours.md"
+  },
+  {
+    "filename": "upload-yours.md",
+    "category": "personal",
+    "path": "/blog/personal/upload-yours.md"
+  },
+  {
+    "filename": "test.md",
+    "category": "technical",
+    "path": "/blog/technical/test.md"
+  }
+]
