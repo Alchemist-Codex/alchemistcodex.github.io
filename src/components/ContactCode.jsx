@@ -3,53 +3,53 @@ import styles from '../styles/ContactCode.module.css';
 const contactItems = [
   {
     social: 'website',
-    link: 'nitinranganath.me',
-    href: 'https://nitinranganath.me',
+    link: '',
+    href: '',
   },
   {
     social: 'email',
-    link: 'nitinranganath@gmail.com',
-    href: 'mailto:nitinranganath@gmail.com',
+    link: '',
+    href: 'mailto:',
   },
   {
     social: 'github',
-    link: 'itsnitinr',
-    href: 'https://github.com/itsnitinr',
+    link: '',
+    href: '',
   },
   {
     social: 'linkedin',
-    link: 'nitinranganath',
-    href: 'https://www.linkedin.com/in/nitinranganath/',
+    link: '',
+    href: '',
   },
   {
     social: 'twitter',
-    link: 'iamnitinr',
-    href: 'https://www.twitter.com/iamnitinr',
+    link: '',
+    href: '',
   },
   {
     social: 'instagram',
-    link: 'iamnitinr',
-    href: 'https://www.instagram.com/iamnitinr',
+    link: '',
+    href: '',
   },
   {
     social: 'polywork',
-    link: 'nitinranganath',
-    href: 'https://www.polywork.com/nitinranganath',
+    link: '',
+    href: '',
   },
   {
     social: 'telegram',
-    link: 'iamnitinr',
-    href: 'https://t.me/iamnitinr',
+    link: '',
+    href: '',
   },
   {
     social: 'codepen',
-    link: 'nitinranganath',
-    href: 'https://codepen.io/itsnitinr',
+    link: '',
+    href: '',
   },
   {
     social: 'codesandbox',
-    link: 'itsnitinr',
-    href: 'https://codesandbox.io/u/itsnitinr',
+    link: '',
+    href: '',
   },
 ];
 
